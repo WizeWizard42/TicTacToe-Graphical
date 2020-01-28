@@ -1,2 +1,2 @@
-# TicTacToe-Graphical
-A graphical version of TicTacToe that runs on Linux!
+# TicTacToe
+A graphical Tic Tac Toe game!
