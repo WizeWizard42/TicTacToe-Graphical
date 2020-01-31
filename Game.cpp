@@ -11,10 +11,20 @@ int Game::getTurns() {return turns_;}
 
 Board Game::getBoard() {return board_;}
 
+void Game::startGame()
+{
+    while(true) {
+        cout << *this << endl;
+        if (turns_ >= 99) cout << "Player " << player_ << " wins!" << endl;
+        if (turns_ >= 9) break;
+        player_ == 'X' ? takeTurn('O') : takeTurn('X');
+        if (checkWin()) turns_ = 99;
+    }
+}
+
 void Game::takeTurn(char player='X')
 {
     setPlayer(player);
-    cout << *this << endl;
     while (true)
     {
         int x;
@@ -25,7 +35,7 @@ void Game::takeTurn(char player='X')
         cout << "Please enter the column number: ";
         std::cin >> y;
         cout << endl;
-        if (x > 0 && x < 2 && this->board_.getBoard()[x][y] != 'X' && this->board_.getBoard()[x][y] != 'O')
+        if (x >= 0 && x <= 2 && this->board_.getBoard()[x][y] != 'X' && this->board_.getBoard()[x][y] != 'O')
         {
             this->board_.setTile(x, y, player);
             cout << "Player's " << player << " has been placed on [" << x << "][" << y << "]!" << endl;
@@ -33,12 +43,11 @@ void Game::takeTurn(char player='X')
         }
         cout << "You either entered a number less than zero or greater than 3, or picked a full tile. Please pick another." << endl;
     }
+    turns_++;
 }
 
 bool Game::checkWin()
 {
-    cout << "Current player is: " << player_ << endl;
-
     for (std::array<char, 3> it : board_.getBoard()) if (it[0] == player_ && it[1] == player_ && it[2] == player_) return true;
 
     for (unsigned int i = 0; i < board_.getBoard().size(); i++) if (board_.getBoard()[0][i] == player_ && board_.getBoard()[1][i] == player_ && board_.getBoard()[2][i] == player_) return true;

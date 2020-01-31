@@ -1,4 +1,3 @@
-#include "mainwindow.hpp"
 #include "Board.hpp"
 #include "Game.hpp"
 
@@ -12,7 +11,6 @@ using std::endl;
 int main(int argc, char *argv[])
 {
     Game game = Game();
-    game.takeTurn('O');
 
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
