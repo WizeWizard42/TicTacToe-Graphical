@@ -8,13 +8,13 @@
 using std::cout;
 using std::endl;
 
-int main(int argc, char *argv[])
+Q_DECL_EXPORT int main(int argc, char *argv[])
 {
-    Game game = Game();
-
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 
     QGuiApplication app(argc, argv);
+    qmlRegisterType<Game>("com.myself", 1, 0, "Game");
+    qmlRegisterType<Board>("com.myself", 1, 0, "Board");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

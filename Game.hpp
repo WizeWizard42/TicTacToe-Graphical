@@ -4,20 +4,24 @@
 #include "Board.hpp"
 #include <ostream>
 
-class Game
+#include <QObject>
+
+class Game : public QObject
 {
+    Q_OBJECT
     public:
-        char getPlayer ();
-        void setPlayer(char);
+        Game (QObject* parent = 0) : QObject(parent) {}
+        Q_INVOKABLE char getPlayer ();
+        Q_INVOKABLE void setPlayer(char);
 
-        int getTurns();
+        Q_INVOKABLE int getTurns();
 
-        Board getBoard();
+        Q_INVOKABLE Board getBoard();
 
-        void takeTurn(char);
-        bool checkWin();
+        Q_INVOKABLE void takeTurn();
+        Q_INVOKABLE bool checkWin();
         
-        void startGame();
+        Q_INVOKABLE void startGame();
 
         friend std::ostream& operator<<(std::ostream&, const Game&);
     private:

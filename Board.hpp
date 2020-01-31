@@ -4,15 +4,18 @@
 #include <ostream>
 #include <array>
 
-class Board
+#include <QObject>
+
+class Board : public QObject
 {
+    Q_OBJECT
     public:
-        Board();
+        Board (QObject* parent = 0) : QObject(parent) {board_.fill(std::array<char, 3>{{'I', 'I', 'I'}});};
 
-        char getTile(int, int);
-        int setTile(int, int, char);
+        Q_INVOKABLE char getTile(int, int);
+        Q_INVOKABLE int setTile(int, int, char);
 
-        std::array<std::array<char, 3>, 3> getBoard();
+        Q_INVOKABLE const std::array<std::array<char, 3>, 3> getBoard();
 
         friend std::ostream& operator<<(std::ostream&, const Board&);
     private:

@@ -1,6 +1,8 @@
 #include "Game.hpp"
 #include <iostream>
 
+#include <QObject>
+
 using std::cout;
 using std::endl;
 
@@ -17,32 +19,14 @@ void Game::startGame()
         cout << *this << endl;
         if (turns_ >= 99) cout << "Player " << player_ << " wins!" << endl;
         if (turns_ >= 9) break;
-        player_ == 'X' ? takeTurn('O') : takeTurn('X');
+        takeTurn();
         if (checkWin()) turns_ = 99;
     }
 }
 
-void Game::takeTurn(char player='X')
+void Game::takeTurn()
 {
-    setPlayer(player);
-    while (true)
-    {
-        int x;
-        int y;
-        cout << "Please enter the row number: ";
-        std::cin >> x;
-        cout << endl;
-        cout << "Please enter the column number: ";
-        std::cin >> y;
-        cout << endl;
-        if (x >= 0 && x <= 2 && this->board_.getBoard()[x][y] != 'X' && this->board_.getBoard()[x][y] != 'O')
-        {
-            this->board_.setTile(x, y, player);
-            cout << "Player's " << player << " has been placed on [" << x << "][" << y << "]!" << endl;
-            break;
-        }
-        cout << "You either entered a number less than zero or greater than 3, or picked a full tile. Please pick another." << endl;
-    }
+    player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
 }
 
