@@ -35,7 +35,7 @@ Window {
             id: mouseArea1
             anchors.fill: parent
             onClicked: {
-                Qt.quit();
+                Game.takeTurn(0, 0);
             }
         }
     }

@@ -12,16 +12,14 @@ class Game : public QObject
     public:
         Game (QObject* parent = 0) : QObject(parent) {}
         Q_INVOKABLE char getPlayer ();
-        Q_INVOKABLE void setPlayer(char);
+        Q_INVOKABLE void setPlayer(char player);
 
         Q_INVOKABLE int getTurns();
 
-        Q_INVOKABLE Board getBoard();
+        Q_INVOKABLE const Board &getBoard();
 
-        Q_INVOKABLE void takeTurn();
+        Q_INVOKABLE void takeTurn(int x, int y);
         Q_INVOKABLE bool checkWin();
-        
-        Q_INVOKABLE void startGame();
 
         friend std::ostream& operator<<(std::ostream&, const Game&);
     private:

@@ -2,6 +2,7 @@
 #include <iostream>
 
 #include <QObject>
+#include <QtWidgets/QApplication>
 
 using std::cout;
 using std::endl;
@@ -11,21 +12,12 @@ void Game::setPlayer(char player) {if (player == 'X' || player == 'O') player_ =
 
 int Game::getTurns() {return turns_;}
 
-Board Game::getBoard() {return board_;}
+const Board &Game::getBoard() {return board_;}
 
-void Game::startGame()
+void Game::takeTurn(int x, int y)
 {
-    while(true) {
-        cout << *this << endl;
-        if (turns_ >= 99) cout << "Player " << player_ << " wins!" << endl;
-        if (turns_ >= 9) break;
-        takeTurn();
-        if (checkWin()) turns_ = 99;
-    }
-}
-
-void Game::takeTurn()
-{
+    QWidgetList app = QApplication::topLevelWidgets();
+    board_.setTile(x, y, player_);
     player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
 }
