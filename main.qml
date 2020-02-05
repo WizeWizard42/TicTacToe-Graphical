@@ -31,6 +31,7 @@ Window {
 
         Image {
             id: tile1X
+            objectName: "tile1X"
             visible: false
             anchors.fill: parent
             source: "X.png"
@@ -48,6 +49,7 @@ Window {
 
     Item {
         id: tile2
+        objectName: "tile2"
         x: 200
         y: 0
         width: 200
@@ -55,6 +57,7 @@ Window {
 
         Image {
             id: tile2O
+            objectName: "tile2O"
             visible: false
             anchors.fill: parent
             source: "O.png"
@@ -63,6 +66,7 @@ Window {
 
         Image {
             id: tile2X
+            objectName: "tile2X"
             visible: false
             anchors.fill: parent
             source: "X.png"
@@ -77,6 +81,7 @@ Window {
 
     Item {
         id: tile3
+        objectName: "tile3"
         x: 400
         y: 0
         width: 200
@@ -84,6 +89,7 @@ Window {
 
         Image {
             id: tile3O
+            objectName: "tile3O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -92,6 +98,7 @@ Window {
 
         Image {
             id: tile3X
+            objectName: "tile3X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -106,6 +113,7 @@ Window {
 
     Item {
         id: tile4
+        objectName: "tile4"
         x: 0
         y: 200
         width: 200
@@ -113,6 +121,7 @@ Window {
 
         Image {
             id: tile4O
+            objectName: "tile4O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -121,6 +130,7 @@ Window {
 
         Image {
             id: tile4X
+            objectName: "tile4X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -135,6 +145,7 @@ Window {
 
     Item {
         id: tile5
+        objectName: "tile5"
         x: 200
         y: 200
         width: 200
@@ -142,6 +153,7 @@ Window {
 
         Image {
             id: tile5O
+            objectName: "tile5O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -150,6 +162,7 @@ Window {
 
         Image {
             id: tile5X
+            objectName: "tile5X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -164,6 +177,7 @@ Window {
 
     Item {
         id: tile6
+        objectName: "tile6"
         x: 400
         y: 200
         width: 200
@@ -171,6 +185,7 @@ Window {
 
         Image {
             id: tile6O
+            objectName: "tile6O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -179,6 +194,7 @@ Window {
 
         Image {
             id: tile6X
+            objectName: "tile6X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -193,6 +209,7 @@ Window {
 
     Item {
         id: tile7
+        objectName: "tile7"
         x: 0
         y: 400
         width: 200
@@ -200,6 +217,7 @@ Window {
 
         Image {
             id: tile7O
+            objectName: "tile7O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -208,6 +226,7 @@ Window {
 
         Image {
             id: tile7X
+            objectName: "tile7X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -222,6 +241,7 @@ Window {
 
     Item {
         id: tile8
+        objectName: "tile8"
         x: 200
         y: 400
         width: 200
@@ -229,6 +249,7 @@ Window {
 
         Image {
             id: tile8O
+            objectName: "tile8O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -237,6 +258,7 @@ Window {
 
         Image {
             id: tile8X
+            objectName: "tile8X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit
@@ -251,6 +273,7 @@ Window {
 
     Item {
         id: tile9
+        objectName: "tile9"
         x: 400
         y: 400
         width: 200
@@ -258,6 +281,7 @@ Window {
 
         Image {
             id: tile9O
+            objectName: "tile9O"
             source: "O.png"
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
@@ -266,6 +290,7 @@ Window {
 
         Image {
             id: tile9X
+            objectName: "tile9X"
             anchors.fill: parent
             source: "X.png"
             fillMode: Image.PreserveAspectFit

@@ -21,20 +21,13 @@ const Board &Game::getBoard() {return board_;}
 void Game::takeTurn(int x, int y)
 {
     QWindow *mainwindow = QApplication::topLevelWindows()[0];
-    cout << mainwindow << endl;
+    QString pTileid = QString::fromStdString("tile" + std::to_string((x+1)*(y+1)));
     QString tileid = QString::fromStdString("tile" + std::to_string((x+1)*(y+1)) + player_);
 
     if (board_.setTile(x, y, player_)) return;
 
-    QObjectList children = mainwindow->children();
-    QObjectList::const_iterator it = children.begin();
-    QObjectList::const_iterator eIt = children.end();
-
-    while (it != eIt)
-    {
-        QObject *pChild = (QObject *)(*it++);
-        cout << pChild->objectName().toStdString() << endl;
-    }
+    QObject *tile = mainwindow->findChild<QObject *>(pTileid)->findChild<QObject *>(tileid);
+    tile->setProperty("visible", true);
 
     player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
