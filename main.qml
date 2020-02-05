@@ -1,5 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Window 2.12
+import com.myself 1.0
 
 Window {
     visible: true
@@ -35,7 +36,7 @@ Window {
             id: mouseArea1
             anchors.fill: parent
             onClicked: {
-                Game.takeTurn(0, 0);
+                Game.takeTurn(0, 0)
             }
         }
     }

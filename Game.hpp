@@ -10,7 +10,7 @@ class Game : public QObject
 {
     Q_OBJECT
     public:
-        Game (QObject* parent = 0) : QObject(parent) {}
+        explicit Game (QObject* parent = 0) : QObject(parent) {}
         Q_INVOKABLE char getPlayer ();
         Q_INVOKABLE void setPlayer(char player);
 

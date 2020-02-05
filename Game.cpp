@@ -2,7 +2,7 @@
 #include <iostream>
 
 #include <QObject>
-#include <QtWidgets/QApplication>
+#include <QApplication>
 
 using std::cout;
 using std::endl;
@@ -16,7 +16,8 @@ const Board &Game::getBoard() {return board_;}
 
 void Game::takeTurn(int x, int y)
 {
-    QWidgetList app = QApplication::topLevelWidgets();
+    QWindow* app = QApplication::topLevelWindows()[0];
+    cout << app << endl;
     board_.setTile(x, y, player_);
     player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
