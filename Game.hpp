@@ -8,11 +8,11 @@
 
 class Game : public QObject
 {
-    Q_OBJECT
+    Q_OBJECT;
     public:
-        explicit Game (QObject* parent = 0) : QObject(parent) {}
-        Q_INVOKABLE char getPlayer ();
-        Q_INVOKABLE void setPlayer(char player);
+        explicit Game (QObject* parent = 0) : QObject(parent), player_('X') {}
+        char getPlayer ();
+        void setPlayer(char player);
 
         Q_INVOKABLE int getTurns();
 

@@ -7,9 +7,13 @@ Window {
     width: 600
     height: 600
     title: qsTr("TicTacToe")
+    Game {
+        id: game
+    }
 
     Item {
         id: tile1
+        objectName: "tile1"
         x: 0
         y: 0
         width: 200
@@ -18,6 +22,7 @@ Window {
 
         Image {
             id: tile1O
+            objectName: "tile1O"
             visible: false
             anchors.fill: parent
             source: "O.png"
@@ -36,7 +41,7 @@ Window {
             id: mouseArea1
             anchors.fill: parent
             onClicked: {
-                Game.takeTurn(0, 0)
+                game.takeTurn(0,0)
             }
         }
     }

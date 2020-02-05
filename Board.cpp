@@ -6,6 +6,8 @@
 using std::cout;
 using std::endl;
 
+Board::Board() {board_.fill(std::array<char, 3>{{'I', 'I', 'I'}});};
+
 const std::array<std::array<char, 3>, 3> Board::getBoard() {return board_;}
 
 char Board::getTile(int row, int column) {return board_[row][column];}

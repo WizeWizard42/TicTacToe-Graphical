@@ -1,11 +1,15 @@
 #include "Game.hpp"
 #include <iostream>
+#include <string>
 
 #include <QObject>
+#include <QWindow>
 #include <QApplication>
+#include <QString>
 
 using std::cout;
 using std::endl;
+using std::string;
 
 char Game::getPlayer() {return player_;}
 void Game::setPlayer(char player) {if (player == 'X' || player == 'O') player_ = player;};
@@ -16,9 +20,22 @@ const Board &Game::getBoard() {return board_;}
 
 void Game::takeTurn(int x, int y)
 {
-    QWindow* app = QApplication::topLevelWindows()[0];
-    cout << app << endl;
-    board_.setTile(x, y, player_);
+    QWindow *mainwindow = QApplication::topLevelWindows()[0];
+    cout << mainwindow << endl;
+    QString tileid = QString::fromStdString("tile" + std::to_string((x+1)*(y+1)) + player_);
+
+    if (board_.setTile(x, y, player_)) return;
+
+    QObjectList children = mainwindow->children();
+    QObjectList::const_iterator it = children.begin();
+    QObjectList::const_iterator eIt = children.end();
+
+    while (it != eIt)
+    {
+        QObject *pChild = (QObject *)(*it++);
+        cout << pChild->objectName().toStdString() << endl;
+    }
+
     player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
 }

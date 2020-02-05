@@ -14,7 +14,6 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     qmlRegisterType<Game>("com.myself", 1, 0, "Game");
-    qmlRegisterType<Board>("com.myself", 1, 0, "Board");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));
