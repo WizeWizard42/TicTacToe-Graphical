@@ -76,6 +76,9 @@ Window {
         MouseArea {
             id: mouseArea2
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(0,1)
+            }
         }
     }
 
@@ -108,6 +111,9 @@ Window {
         MouseArea {
             id: mouseArea3
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(0,2)
+            }
         }
     }
 
@@ -140,6 +146,9 @@ Window {
         MouseArea {
             id: mouseArea4
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(1,0)
+            }
         }
     }
 
@@ -172,6 +181,9 @@ Window {
         MouseArea {
             id: mouseArea5
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(1,1)
+            }
         }
     }
 
@@ -204,6 +216,9 @@ Window {
         MouseArea {
             id: mouseArea6
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(1,2)
+            }
         }
     }
 
@@ -236,6 +251,9 @@ Window {
         MouseArea {
             id: mouseArea7
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(2,0)
+            }
         }
     }
 
@@ -268,6 +286,9 @@ Window {
         MouseArea {
             id: mouseArea8
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(2,1)
+            }
         }
     }
 
@@ -300,6 +321,9 @@ Window {
         MouseArea {
             id: mouseArea9
             anchors.fill: parent
+            onClicked: {
+                game.takeTurn(2,2)
+            }
         }
     }
 

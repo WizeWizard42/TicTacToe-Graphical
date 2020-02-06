@@ -9,7 +9,6 @@
 
 using std::cout;
 using std::endl;
-using std::string;
 
 char Game::getPlayer() {return player_;}
 void Game::setPlayer(char player) {if (player == 'X' || player == 'O') player_ = player;};
@@ -21,13 +20,18 @@ const Board &Game::getBoard() {return board_;}
 void Game::takeTurn(int x, int y)
 {
     QWindow *mainwindow = QApplication::topLevelWindows()[0];
-    QString pTileid = QString::fromStdString("tile" + std::to_string((x+1)*(y+1)));
-    QString tileid = QString::fromStdString("tile" + std::to_string((x+1)*(y+1)) + player_);
+    QString pTileid = QString::fromStdString("tile" + std::to_string(3*x+y+1));
+    QString tileid = QString::fromStdString("tile" + std::to_string(3*x+y+1) + player_);
 
     if (board_.setTile(x, y, player_)) return;
 
     QObject *tile = mainwindow->findChild<QObject *>(pTileid)->findChild<QObject *>(tileid);
     tile->setProperty("visible", true);
+
+    if (checkWin())
+    {
+        turns_ = 99;
+    }
 
     player_ == 'X' ? player_ = 'O' : player_ = 'X';
     turns_++;
