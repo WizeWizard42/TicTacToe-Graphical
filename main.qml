@@ -3,6 +3,7 @@ import QtQuick.Window 2.12
 import com.myself 1.0
 
 Window {
+    id: window
     visible: true
     width: 600
     height: 600
@@ -328,19 +329,20 @@ Window {
     }
 
 
+
 }
 
 /*##^##
 Designer {
-    D{i:2;anchors_width:200;anchors_x:0;anchors_y:0}D{i:3;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:1;anchors_height:400;anchors_width:400;anchors_x:120;anchors_y:40}D{i:6;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:7;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:10;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:11;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:14;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:15;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:18;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:19;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:22;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:23;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:26;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:27;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:30;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:31;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}D{i:34;anchors_width:200;anchors_x:0;anchors_y:0}
-D{i:35;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+    D{i:1;anchors_height:400;anchors_width:400;anchors_x:120;anchors_y:40}D{i:3;anchors_width:200;anchors_x:0;anchors_y:0}
+D{i:2;anchors_width:200;anchors_x:0;anchors_y:0}D{i:7;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:6;anchors_width:200;anchors_x:0;anchors_y:0}D{i:11;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:10;anchors_width:200;anchors_x:0;anchors_y:0}D{i:15;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:14;anchors_width:200;anchors_x:0;anchors_y:0}D{i:19;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:18;anchors_width:200;anchors_x:0;anchors_y:0}D{i:23;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:22;anchors_width:200;anchors_x:0;anchors_y:0}D{i:27;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:26;anchors_width:200;anchors_x:0;anchors_y:0}D{i:31;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:30;anchors_width:200;anchors_x:0;anchors_y:0}D{i:35;anchors_width:200;anchors_x:"-9";anchors_y:"-8"}
+D{i:34;anchors_width:200;anchors_x:0;anchors_y:0}
 }
 ##^##*/
