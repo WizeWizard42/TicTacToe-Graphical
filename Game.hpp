@@ -18,10 +18,13 @@ class Game : public QObject
 
         Q_INVOKABLE const Board &getBoard();
 
-        Q_INVOKABLE void takeTurn(int x, int y);
         Q_INVOKABLE bool checkWin();
 
         friend std::ostream& operator<<(std::ostream&, const Game&);
+
+    public slots:
+        void takeTurn(int x, int y);
+
     private:
         char player_;
         int turns_;

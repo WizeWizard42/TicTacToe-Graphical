@@ -1,5 +1,6 @@
 #include "Board.hpp"
 #include "Game.hpp"
+#include "CClickableLabel.hpp"
 
 #include <iostream>
 #include <QGuiApplication>
@@ -14,6 +15,7 @@ Q_DECL_EXPORT int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
     qmlRegisterType<Game>("com.myself", 1, 0, "Game");
+    qmlRegisterType<CClickableLabel>("com.myself", 1, 0, "CClickableLabel");
 
     QQmlApplicationEngine engine;
     const QUrl url(QStringLiteral("qrc:/main.qml"));

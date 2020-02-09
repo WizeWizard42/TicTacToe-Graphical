@@ -1,4 +1,5 @@
 #include "Board.hpp"
+
 #include <array>
 #include <algorithm>
 #include <iostream>

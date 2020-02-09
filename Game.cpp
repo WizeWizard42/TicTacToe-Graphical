@@ -4,8 +4,6 @@
 
 #include <QObject>
 #include <QWindow>
-#include <QApplication>
-#include <QString>
 
 using std::cout;
 using std::endl;
@@ -19,14 +17,7 @@ const Board &Game::getBoard() {return board_;}
 
 void Game::takeTurn(int x, int y)
 {
-    QWindow *mainwindow = QApplication::topLevelWindows()[0];
-    QString pTileid = QString::fromStdString("tile" + std::to_string(3*x+y+1));
-    QString tileid = QString::fromStdString("tile" + std::to_string(3*x+y+1) + player_);
-
     if (board_.setTile(x, y, player_)) return;
-
-    QObject *tile = mainwindow->findChild<QObject *>(pTileid)->findChild<QObject *>(tileid);
-    tile->setProperty("visible", true);
 
     if (checkWin())
     {
@@ -39,7 +30,6 @@ void Game::takeTurn(int x, int y)
 
 bool Game::checkWin()
 {
-    QWindow *mainwindow = QApplication::topLevelWindows()[0];
 
     for (std::array<char, 3> it : board_.getBoard()) if (it[0] == player_ && it[1] == player_ && it[2] == player_) return true;
 

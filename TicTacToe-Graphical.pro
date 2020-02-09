@@ -4,6 +4,8 @@ QT += quick \
 
 CONFIG += c++11
 
+QMAKE_LFLAGS += -v
+
 # The following define makes your compiler emit warnings if you use
 # any Qt feature that has been marked deprecated (the exact warnings
 # depend on your compiler). Refer to the documentation for the
@@ -17,6 +19,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         Board.cpp \
+        CClickableLabel.cpp \
         Game.cpp \
         main.cpp
 
@@ -35,4 +38,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     Board.hpp \
+    CClickableLabel.hpp \
     Game.hpp
