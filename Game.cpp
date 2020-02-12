@@ -20,21 +20,26 @@ const Board &Game::getBoard() {return board_;}
 void Game::takeTurn(int x, int y)
 {
     QWindow *mainwindow = QApplication::topLevelWindows()[0];
-    QString pTileid = QString::fromStdString("tile" + std::to_string(3*x+y+1));
-    QString tileid = QString::fromStdString("tile" + std::to_string(3*x+y+1) + player_);
-
-    if (board_.setTile(x, y, player_)) return;
-
-    QObject *tile = mainwindow->findChild<QObject *>(pTileid)->findChild<QObject *>(tileid);
-    tile->setProperty("visible", true);
 
     if (checkWin())
     {
         turns_ = 99;
+        player_ == 'X' ? mainwindow->setProperty("title", "X Wins!") : mainwindow->setProperty("title", "O Wins!");
     }
+    else
+    {
+        QString pTileid = QString::fromStdString("tile" + std::to_string(3*x+y+1));
+        QString tileid = QString::fromStdString("tile" + std::to_string(3*x+y+1) + player_);
 
-    player_ == 'X' ? player_ = 'O' : player_ = 'X';
-    turns_++;
+        if (board_.setTile(x, y, player_)) return;
+
+        QObject *tile = mainwindow->findChild<QObject *>(pTileid)->findChild<QObject *>(tileid);
+        tile->setProperty("visible", true);
+
+
+        player_ == 'X' ? player_ = 'O' : player_ = 'X';
+        turns_++;
+    }
 }
 
 bool Game::checkWin()
